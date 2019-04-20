@@ -30,4 +30,4 @@ exit 0
 
 ```
 
-Add that script to Task Scheduler to run on a schedule (I run it every 120 seconds)
+Add that script to Task Scheduler to run on a schedule (I run it startup with a repeat every 5 minutes)
