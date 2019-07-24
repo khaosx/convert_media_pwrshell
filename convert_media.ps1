@@ -10,7 +10,7 @@
 #  Variables go here
 # -----------------------------------------------------------------
 
-$intVersion="0.25.04"
+$intVersion="1.25.04"
 
 $drvData = get-volume -FileSystemLabel "Data"
 $drvArchive = get-volume -FileSystemLabel "MediaArchive"
@@ -187,7 +187,7 @@ foreach ($element in $fArray){
 		$strLanguage = "$strAudioInfo" | jq -r ".streams[$intAudCount] | .tags | .language"
 		$intAudCount++
 		if ( "$strLanguage" -eq "eng" -And "$audtrack" -match "[Cc][Oo][Mm][Mm][Ee][Nn][Tt][Aa][Rr][Yy]" ){
-			$strAudioOptions = "$strAudioOptions --add-audio $intAudCount=""$audtrack"""
+			$strAudioOptions = "$strAudioOptions --add-audio $intAudCount=$audtrack"
 		}
 		elseif ( "$strLanguage" -eq "eng" ){
 			$strAudioOptions = "$strAudioOptions --add-audio $intAudCount"
